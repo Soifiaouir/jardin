@@ -102,29 +102,9 @@ add_action( 'acf/include_fields', function() {
 	'title' => 'catégories',
 	'fields' => array(
 		array(
-			'key' => 'field_6690fafa50791',
-			'label' => 'catégorie__titre',
-			'name' => 'categorie__titre',
-			'aria-label' => '',
-			'type' => 'text',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => 'catégorie__titre',
-			'maxlength' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-		),
-		array(
 			'key' => 'field_6690fb5e50792',
 			'label' => 'catégorie__image',
-			'name' => 'categorie__background',
+			'name' => 'categorie__img',
 			'aria-label' => '',
 			'type' => 'image',
 			'instructions' => '',
@@ -181,9 +161,7 @@ add_action( 'acf/include_fields', function() {
 	'style' => 'default',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
-	'hide_on_screen' => array(
-		0 => 'the_content',
-	),
+	'hide_on_screen' => '',
 	'active' => true,
 	'description' => '',
 	'show_in_rest' => 0,
@@ -507,4 +485,6 @@ add_action( 'acf/include_fields', function() {
 	'show_in_rest' => 0,
 ) );
 } );
+
+
 

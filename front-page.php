@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php get_header(); ?>
 <header class="home-header" style="background-image: url('<?php the_field('home__header_background'); ?>');">
-    <div class="home">
+    <div class="homeh">
         <div class="home_header">
             <h1><?php the_title(); ?></h1>
             <?php the_field('home__header_description'); ?>
