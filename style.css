@@ -1,28 +1,30 @@
-/*!
-Theme Name: Theme jardin
-Theme URI: https://github.com/Soifiaouir/jardin
-Author: Soifia OUIRDANE
-Description: Let's create a new theme !
-Version: 1
-*/
-@font-face{font-family:ExempleFont;src:url(assets/fonts/font.woff2) format("woff2")}
+header {
+  background-color: rgb(148, 135, 14);
+  height: 50px;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  padding-top: 20px;
+}
+header ul li {
+  list-style-type: none;
+  font-size: 1.5em;
+  color: antiquewhite;
+  text-decoration: none;
+}
 
 body {
   background-color: #1E1E1E;
-  opacity: 94%;
   margin: 0;
-  padding: 0;
+  padding: 10px;
   color: bisque;
   text-align: center;
 }
-
-.nav {
-  background-color: rgb(90, 236, 90);
-  display: flex;
-  flex-direction: row;
-}
-
-.home-header {
+body .home .header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -34,69 +36,54 @@ body {
   text-align: center;
   padding: 20px;
 }
-
-.home-header .home_header {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.home-header h1 {
+body .home .header h1 {
   margin: 0;
   font-size: 2.5em;
 }
-
-.home-header p {
+body .home .header p {
   margin-top: 10px;
   font-size: 1.2em;
 }
-
-.home-content {
+body .home .content {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
 }
-
-.last-post {
-  width: 30%;
-  margin-bottom: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.last-post img {
+body .home .content .last-post img {
   width: 100%;
-  height: auto;
   border-radius: 5px;
 }
-
-.last-post h3 {
+body .home .content .last-post h3 {
   margin-top: 10px;
   font-size: 1.2em;
 }
-
-.last-post a {
+body .home .content .last-post a {
   display: inline-block;
   margin-top: 10px;
   padding: 5px 10px;
-  background-color: rgb(90, 236, 90);
   color: #1E1E1E;
   text-decoration: none;
   border-radius: 5px;
+}
+body .single {
+  background-color: #141710;
+}
+body .single .date {
+  display: flex;
+  flex-direction: row;
+}
+body .single .acf-image img {
+  width: 30vh;
+  height: 10vh;
+  align-items: center;
 }
 
 .site-footer {
   width: 100%;
   display: flex;
   flex-direction: row;
-  background-color: rgb(90, 236, 90);
+  background-color: rgb(148, 135, 14);
   padding: 20px 0;
   margin-top: 20px;
-}
-
-.date {
-  display: flex;
-  flex-direction: row;
-}
+}/*# sourceMappingURL=style.css.map */

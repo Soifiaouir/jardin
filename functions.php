@@ -1,7 +1,7 @@
 <?php
 function enregistrer_types_publications_personnalises() {
     $types = array(
-        'fruit' => 'Fruits',
+        'fruits' => 'Fruits',
         'herbes_aromatiques' => 'Herbes Aromatiques',
         'legumes' => 'Légumes'
     );
@@ -23,6 +23,6 @@ add_action('init', 'enregistrer_types_publications_personnalises');
 
 <?php
 
-include 'ACF.php';
-include 'CPT-UI.php';
+include 'configACF.php';
+include 'configCPT-UI.php';
 

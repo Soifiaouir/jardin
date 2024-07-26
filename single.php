@@ -11,46 +11,56 @@
 
         <div class="entry-content">
             <?php
-            // Débogage de l'image mise en avant
+            // Gestion de l'image mise en avant
             if (has_post_thumbnail()) :
                 $thumbnail_id = get_post_thumbnail_id();
-                $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'large')[0];
-                echo "<p>Image mise en avant URL: $thumbnail_url</p>";
-            ?>
-                <div class="featured-image">
-                    <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
-                </div>
-            <?php
-            else :
-                echo "<p>Pas d'image mise en avant.</p>";
+                $thumbnail_array = wp_get_attachment_image_src($thumbnail_id, 'large');
+                if (is_array($thumbnail_array) && !empty($thumbnail_array)) {
+                    $thumbnail_url = $thumbnail_array[0];
+                    ?>
+                    <div class="featured-image">
+                        <?php the_post_thumbnail('large', array('class' => 'img-fluid')); ?>
+                    </div>
+                    <?php
+                }
             endif;
 
-            // Débogage des champs ACF
+            // Affichage des champs ACF
             if (function_exists('get_field')) :
                 $date_depart = get_field('sous-categorie__date_de_depart-seme');
                 $date_fin = get_field('sous-categorie__date_de_fin-seme');
                 $description = get_field('sous_categorie__description');
-                $image_acf = get_field('sous-categorie__image');
+                $image_acf = get_field('sous-categorie__image') ;
 
-                if ($date_depart) echo "<p>Date de départ : " . esc_html($date_depart) . "</p>";
-                if ($date_fin) echo "<p>Date de fin : " . esc_html($date_fin) . "</p>";
-                if ($description) echo "<div class='description'>" . wp_kses_post($description) . "</div>";
-                if ($image_acf) :
-                    echo "<p>Image ACF URL: " . esc_url($image_acf['url']) . "</p>";
-            ?>
-                    <div class="acf-image">
-                        <?php echo wp_get_attachment_image($image_acf['ID'], 'full', false, array('class' => 'img-fluid')); ?>
-                    </div>
-            <?php
-                else :
-                    echo "<p>Pas d'image ACF.</p>";
-                endif;
+                if ($date_depart) {
+                    echo "<p><strong>Date de départ :</strong> " . esc_html($date_depart) . "</p>";
+                }
+                if ($date_fin) {
+                    echo "<p><strong>Date de fin :</strong> " . esc_html($date_fin) . "</p>";
+                }
+                if ($description) {
+                    echo "<div class='description'>" . wp_kses_post($description) . "</div>";
+                }
+                if ($image_acf) {
+                    if (is_array($image_acf) && isset($image_acf['url'])) {
+                        echo "<div class='acf-image'>";
+                        echo "<img src='" . esc_url($image_acf['url']) . "' alt='" . esc_attr(get_the_title()) . "' />";
+                        echo "</div>";
+                    } elseif (is_string($image_acf)) {
+                        echo "<div class='acf-image'>";
+                        echo "<img src='" . esc_url($image_acf) . "' alt='" . esc_attr(get_the_title()) . "' />";
+                        echo "</div>";
+                    }
+                }
             endif;
 
             // Contenu principal de l'article
             the_content();
             ?>
         </div>
+
+       
+
     <?php
         endwhile;
     else :
@@ -58,5 +68,7 @@
     endif;
     ?>
 </article>
+
+
 
 <?php get_footer(); ?>
