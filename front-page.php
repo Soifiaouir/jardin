@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php get_header(); ?>
+
 <header class="home-header" style="background-image: url('<?php the_field('home__header_background'); ?>');">
     <div class="homeh">
         <div class="home_header">

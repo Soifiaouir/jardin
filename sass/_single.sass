@@ -1,0 +1,54 @@
+.single-article
+  max-width: 800px
+  margin: 0 auto
+  padding: 20px
+  background-color: white
+  +box-shadow(0 0 10px rgba(0,0,0,0.1))
+
+  .entry-header
+    margin-bottom: 20px
+
+    .entry-title
+      font-size: 2.5em
+      color: $primary-color
+
+  .entry-content
+    .featured-image
+      margin-bottom: 20px
+
+      img
+        width: 100%
+        height: auto
+
+    p
+      margin-bottom: 15px
+
+    strong
+      font-weight: bold
+
+    .description
+      margin-bottom: 20px
+      font-style: italic
+
+    .acf-image
+      margin-bottom: 20px
+
+      img
+        max-width: 100%
+        height: auto
+
+@media (max-width: 768px)
+  .single-article
+    padding: 15px
+
+    .entry-header
+      .entry-title
+        font-size: 2em
+
+@media (max-width: 480px)
+  .single-article
+    padding: 10px
+
+    .entry-header
+      .entry-title
+        font-size: 1.8em

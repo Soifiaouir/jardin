@@ -9,11 +9,11 @@
 
 <body <?php body_class(); ?>>
 
-<header class="site-header">
-    <nav  class='nav'>
+<header>
         <ul>
             <li><a href="<?php echo get_post_type_archive_link('fruits'); ?>">Fruits</a></li>
             <li><a href="<?php echo get_post_type_archive_link('legumes'); ?>">Légumes</a></li>
             <li><a href="<?php echo get_post_type_archive_link('herbes_aromatiques'); ?>">Herbes Aromatiques</a></li>
         </ul>
-</nav>
+</header>
+

@@ -1,0 +1,32 @@
+header
+  background-color: darken($background-color, 10%)
+  padding: 20px 0
+
+  ul
+    list-style-type: none
+    margin: 0
+    padding: 0
+    display: flex
+    justify-content: center
+
+    li
+      margin: 0 15px
+
+      a
+        color: $text-color
+        text-decoration: none
+        font-size: 18px
+        font-weight: bold
+        transition: color 0.3s ease-in-out
+
+        &:hover
+          color: #FFA500
+
+@media (max-width: 768px)
+  header
+    ul
+      flex-direction: column
+      align-items: center
+
+      li
+        margin: 10px 0
